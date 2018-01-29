@@ -7,13 +7,14 @@ use \Host1Plus\Utilities\ArrayParse;
 
 // interfaces/enums
 use \Host1Plus\Interfaces\iClient;
+use \Host1Plus\Interfaces\iTransport;
 use \Host1Plus\Enums\{RequestMethods as RM, Errors, CloudStatisticTypes as CST};
 
 class CloudServers extends aClient implements iClient
 {
     private $ts;
 
-    public function __construct(Transport $transport)
+    public function __construct(iTransport $transport)
     {
         $this->ts = $transport;
     }

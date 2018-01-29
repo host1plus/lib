@@ -3,6 +3,7 @@
 namespace Host1Plus\Clients;
 
 use \GuzzleHttp\Client as HttpClient;
+use \GuzzleHttp\ClientInterface;
 use \GuzzleHttp\Psr7\Request;
 
 // interfaces
@@ -33,7 +34,7 @@ class Transport implements iTransport
      * @param string $apiKey
      * @param HttpClient $httpClient
      */
-    public function __construct(string $url, string $apiKey, HttpClient $httpClient = null)
+    public function __construct(string $url, string $apiKey, ClientInterface $httpClient = null)
     {
         $this->url        = \rtrim($url, '/');
         $this->apiKey     = $apiKey;

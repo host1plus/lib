@@ -7,6 +7,7 @@ use \Host1Plus\Utilities\ArrayParse;
 
 // interfaces/enums
 use \Host1Plus\Interfaces\iClient;
+use \Host1Plus\Interfaces\iTransport;
 use \Host1Plus\Enums\{RequestMethods as RM, Errors, VpsScheduleIntervals as VSI, VpsStatisticRetentions as VSR};
 
 // exceptions
@@ -16,7 +17,7 @@ class Vps extends aClient implements iClient
 {
     private $ts;
 
-    public function __construct(Transport $transport)
+    public function __construct(iTransport $transport)
     {
         $this->ts = $transport;
     }
